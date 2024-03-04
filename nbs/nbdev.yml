@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "mana-signals"
+  site-url: "https://jstranik.github.io/mana-signals"
+  description: "Signal Computation System"
+  repo-branch: main
+  repo-url: "https://github.com/jstranik/mana-signals"
