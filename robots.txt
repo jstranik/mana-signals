@@ -1,0 +1,1 @@
+Sitemap: https://jstranik.github.io/mana-signals/sitemap.xml
