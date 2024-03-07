@@ -1,0 +1,11 @@
+website:
+  sidebar:
+    contents:
+      - index.ipynb
+      - 10_reactive.ipynb
+      - 15_core.ipynb
+      - 20_data.ipynb
+      - 50_demo.ipynb
+      - 80_explore.ipynb
+      - 90_dask.ipynb
+      - 99_performance.ipynb
