@@ -8,15 +8,47 @@ the data.
 ## Install
 
 ``` sh
-pip install mana_signals
+pip install git+https://github.com/jstranik/mana-signals.git
 ```
 
 ## How to use
 
-Fill me in please! Don’t forget code examples:
+The package contains a library for processing market data and making
+signal generators.
+
+Documentation of the library is avaialble at
+https://jstranik.github.io/mana-signals/reactive.html
+
+However here is a small teaser:
 
 ``` python
-1+1
+a = RInput(0)
+v = RLastn(a, 3)
+for i in range(5): 
+    print(v.value)
+    a.set_value(i)
 ```
 
-    2
+    [ 0. nan nan]
+    [ 0.  0. nan]
+    [1. 0. 0.]
+    [2. 1. 0.]
+    [3. 2. 1.]
+
+Above example shows a reactive primite RLastn which collect last 3
+values of the data. The reactive values recalculate on demand when an
+input is change. Therefore accessing `v.value` mutliple times does not
+trigger recalculation unless `a` is changed.
+
+## Demo script
+
+The package contain a simple demo application (available in demo module)
+which processes market data and on every tick prints a mean market
+volatility across symbols.
+
+The demo app can be invoked as:
+
+> \$\> simulate_signal_processing ../marketdata/20230601.MATIC.csv.gz
+
+The application will print in realtime to the console actual market
+volatility on every market input.
